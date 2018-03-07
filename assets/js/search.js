@@ -10,6 +10,6 @@ jQuery(function() {
 		document.location.href=
             location.protocol
             + "//" + location.host
-            + '{{ site.baseurl }}/search/?q='+$("#search-box").val();
+            + '{{ site.baseurl }}/search?q='+$("#search-box").val();
 	});
 });
