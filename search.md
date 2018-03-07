@@ -2,5 +2,7 @@
 layout: search
 title: Search
 ---
-<section id="search-results" style="display: none;">
+<section>
+<h2>Search result</h2>
+<div  id="search-results" style="display: none;"></div>
 </section>

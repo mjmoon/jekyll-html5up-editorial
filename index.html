@@ -43,7 +43,7 @@ layout: jscroll
     <!-- paginator -->
     {% if paginator.next_page_path %}
     <div class="pagination">
-        <a class='button next' href="{{ paginator.next_page_path | absolute_url }}">Load more</a>
+        <a class='button next' href="{{ site.url }}{{ site.baseurl }}{{ paginator.next_page_path }}">Load more</a>
     </div>
     {% endif %}
 </section>
