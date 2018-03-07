@@ -1,0 +1,54 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site infor for SEO tag
+title: "micbon"
+description: "Michael J. Moon's personal blog"
+url: "https://blog.micbon.com/"
+author: "Michael J. Moon"
+
+# Use collections dir
+collections_dir: collections
+collections:
+    menu:
+        permalink: /:name
+        output: true
+
+# Sass
+sass:
+    sass_dir: _sass
+    style: compressed
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: none
+plugins:
+    - jekyll-paginate
+    - jekyll-sitemap
+    - jekyll-feed
+    - jekyll-seo-tag
+    # - jekyll/tagging
+
+# Pagination
+paginate: 8
+
+# tagging
+tag_page_layout: tag_page
+tag_page_dir: tag
+tag_page_data:
+    sitemap: false
+
+# for travis ci
+exclude:
+    - vendor
+    - Gemfile
+    - Gemfile.lock
+    - LICENSE
+    - README.md
+    - Rakefile
+sudo: false

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+    {% include head.html %}
+    <body>
+		<!-- Wrapper -->
+		<div id="wrapper">
+			<!-- Main -->
+			<div id="main">
+				<div class="inner">
+					<!-- Header -->
+					{% include header.html %}
+					{{ content }}
+				</div>
+			</div>
+            {% include sidebar.html %}
+        </div>
+		{% include scripts.html %}
+        <!-- Infinite scroll -->
+        <script src="/assets/js/jquery.jscroll.min.js"></script>
+        <script type="text/javascript">
+        $('.jscroll').jscroll({
+            loadingHtml: '<div class="infinite-spinner"></div>',
+            contentSelector: '.jscroll',
+            nextSelector: '.next',
+            autoTrigger: true,
+            autoTriggerUntil: 5,
+            padding: 0,
+            debug: false
+        });
+        </script>
+
+	</body>
+</html>

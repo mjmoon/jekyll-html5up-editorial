@@ -1,0 +1,47 @@
+---
+layout: jscroll
+---
+<!-- Banner -->
+<section id="banner">
+    <div class="content">
+        <header>
+            <h1>Hi, I’m Editorial<br />
+            by HTML5 UP</h1>
+            <p>A free and fully responsive site template</p>
+        </header>
+        <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
+        <ul class="actions">
+            <li><a href="/about" class="button big">Learn More</a></li>
+        </ul>
+    </div>
+    <span class="image object">
+        <img src="/assets/img/ms-icon-310x310.png" alt="" />
+    </span>
+</section>
+
+<header class="major">
+    <h2>Recent posts</h2>
+</header>
+<!-- Section -->
+<section class="jscroll">
+    <div class="posts">
+        {% for post in paginator.posts %}
+        <article>
+            {% if post.image %}
+            <a href="{{ post.url }}" class="image"><img src="/images/{{ post.image }}" alt="" /></a>
+            {% endif %}
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.excerpt }}</p>
+            <ul class="actions">
+                <li><a href="{{ post.url }}" class="button">More</a></li>
+            </ul>
+        </article>
+        {% endfor %}
+    </div>
+    <!-- paginator -->
+    {% if paginator.next_page_path %}
+    <div class="pagination">
+        <a class='button next' href="{{ paginator.next_page_path }}">Load more</a>
+    </div>
+    {% endif %}
+</section>

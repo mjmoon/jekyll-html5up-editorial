@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+    {% include head.html %}
+    <body>
+		<!-- Wrapper -->
+		<div id="wrapper">
+			<!-- Main -->
+			<div id="main">
+				<div class="inner">
+					<!-- Header -->
+					{% include header.html %}
+					{{ content }}
+				</div>
+			</div>
+            <!-- Sidebar -->
+            {% include sidebar.html %}
+        </div>
+        <!-- Scripts -->
+		{% include scripts.html %}
+        <script src="/assets/js/search.result.js"></script>
+	</body>
+</html>

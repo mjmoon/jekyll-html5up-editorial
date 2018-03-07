@@ -1,0 +1,13 @@
+/* Mini Posts */
+
+.pagination{
+    display: block;
+    width: 100%;
+    text-align: center;
+
+    > .next{
+        $col: _palette(accent-alt);
+        color: $col !important;
+        box-shadow: inset 0 0 0 2px $col;
+    }
+}
