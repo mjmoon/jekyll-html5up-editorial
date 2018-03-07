@@ -1,5 +1,5 @@
 <header id="header">
-    <a href="{{ site.url }}{{ site.baseurl }" class="logo"><strong>{{ site.title }}</strong> | {{ site.description | downcase }}</a>
+    <a href="{{ site.url }}{{ site.baseurl }}" class="logo"><strong>{{ site.title }}</strong> | {{ site.description | downcase }}</a>
     <ul class="icons">
         {% for social in site.data.settings.social %}
         <li><a href="{{ social.link }}" target="_blank" class="icon fa-{{ social.icon }}"><span class="label">{{ social.label }}</span></a></li>
