@@ -15,7 +15,7 @@ layout: jscroll
         </ul>
     </div>
     <span class="image object">
-        <img src="/assets/img/ms-icon-310x310.png" alt="" />
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/img/ms-icon-310x310.png" alt="" />
     </span>
 </section>
 
@@ -28,12 +28,14 @@ layout: jscroll
         {% for post in paginator.posts %}
         <article>
             {% if post.image %}
-            <a href="{{ post.url }}" class="image"><img src="/images/{{ post.image }}" alt="" /></a>
+            <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" class="image">
+                <img src="{{ site.url }}{{ site.baseurl }}/images/{{ post.image }}" alt="" />
+            </a>
             {% endif %}
             <h3>{{ post.title }}</h3>
             <p>{{ post.excerpt }}</p>
             <ul class="actions">
-                <li><a href="{{ post.url }}" class="button">More</a></li>
+                <li><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" class="button">More</a></li>
             </ul>
         </article>
         {% endfor %}
@@ -41,7 +43,7 @@ layout: jscroll
     <!-- paginator -->
     {% if paginator.next_page_path %}
     <div class="pagination">
-        <a class='button next' href="{{ paginator.next_page_path }}">Load more</a>
+        <a class='button next' href="{{ site.url }}{{ site.baseurl }}{{ paginator.next_page_path }}">Load more</a>
     </div>
     {% endif %}
 </section>
