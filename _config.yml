@@ -8,7 +8,7 @@
 # Site infor for SEO tag
 title: "micbon"
 description: "Michael J. Moon's personal blog"
-url: "https://blog.micbon.com/"
+# url: "https://blog.micbon.com/"
 author: "Michael J. Moon"
 
 # Use collections dir
