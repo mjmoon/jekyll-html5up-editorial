@@ -17,15 +17,15 @@
             </header>
             <div class="mini-posts">
                 <article>
-                    <a href="#" class="image"><img src="{{ site.url }}{{ site.baseurl }}/images/pic07.jpg" alt="" /></a>
+                    <a href="#" class="image"><img src="{{ '/images/pic07.jpg' | absolute_url }}" alt="" /></a>
                     <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
                 </article>
                 <article>
-                    <a href="#" class="image"><img src="{{ site.url }}{{ site.baseurl }}/images/pic08.jpg" alt="" /></a>
+                    <a href="#" class="image"><img src="{{ '/images/pic08.jpg' | absolute_url }}" alt="" /></a>
                     <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
                 </article>
                 <article>
-                    <a href="#" class="image"><img src="{{ site.url }}{{ site.baseurl }}/images/pic09.jpg" alt="" /></a>
+                    <a href="#" class="image"><img src="{{ '/images/pic09.jpg' | absolute_url }}" alt="" /></a>
                     <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
                 </article>
             </div>
@@ -55,7 +55,7 @@
                 <li><a href="{{ social.link }}" target="_blank" class="icon fa-{{ social.icon }}"><span class="label">{{ social.label }}</span></a></li>
                 {% endfor %}
             </ul>
-            <p class="copyright">&copy; {{ site.title }}. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+            <p class="copyright">&copy; {{ site.author }}. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
         </footer>
     </div>
 </div>

@@ -3,22 +3,22 @@
         <h2>Menu</h2>
     </header>
     <ul>
-        <li><a href="{{ site.url }}{{ site.baseurl }}">Home</a></li>
+        <li><a href="{{ '/' | absolute_url }}">Home</a></li>
         {% for page in site.menu %}
-        <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+        <li><a href="{{ page.url | absolute_url }}">{{ page.title }}</a></li>
         {% endfor %}
         <li>
             <span class="opener">Submenu</span>
             <ul>
-                <li><a href="{{ site.url }}{{ site.baseurl }}">Home</a></li>
+                <li><a href="{{ '/' | absolute_url }}">Home</a></li>
                 {% for page in site.menu %}
-                <li><a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
+                <li><a href="{{ page.url | absolute_url }}">{{ page.title }}</a></li>
                 {% endfor %}
             </ul>
         </li>
-        <li><a href="{{ site.url }}{{ site.baseurl }}">Home</a></li>
+        <li><a href="{{ '/' | absolute_url }}">Home</a></li>
         {% for page in site.menu %}
-        <li><a href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
+        <li><a href="{{ page.url | absolute_url }}">{{ page.title }}</a></li>
         {% endfor %}
     </ul>
 </nav>
