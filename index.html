@@ -44,8 +44,8 @@ layout: jscroll
     <!-- paginator -->
     {% if paginator.next_page_path %}
     <div class="pagination">
-        <!-- <a class='button next' href="{{ site.url | replace: 'http:', 'https:' }}{{ site.baseurl }}{{ paginator.next_page_path }}">Load more</a> -->
-        <a class='button next' href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Load more</a>
+        <a class='button next' href="{{ site.url | replace: 'http:', 'https:' }}{{ site.baseurl }}{{ paginator.next_page_path }}">Load more</a>
+        <!-- <a class='button next' href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Load more</a> -->
     </div>
     {% endif %}
 </section>
