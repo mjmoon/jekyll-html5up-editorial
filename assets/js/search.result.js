@@ -45,7 +45,14 @@ jQuery(function() {
                 res.forEach(function(result) {
                     var item = loaded_data[result.ref];
                     // Build a snippet of HTML for this result
-                    var appendString = '<li><a href="' + item.url + '">' + item.title + '</a></li>';
+                    var appendString = '' +
+                    '<article>' +
+                    '<h3><a href="' + item.url + '">' + item.title +
+                    '</a></h3>' +
+                    '<h6>' + item.date+ '</h6>' +
+                    '<p>' + item.content.substr(0,160) + '...</p>' +
+                    '</articl>'
+                    ;
 
                     // Add the snippet to the collection of results.
                     $searchres.append(appendString);
