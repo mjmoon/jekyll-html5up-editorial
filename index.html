@@ -29,7 +29,7 @@ layout: jscroll
         <article>
             {% if post.image %}
             <a href="{{ post.url | absolute_url }}" class="image">
-                <img src="{{ site.url }}{{ site.baseurl }}/images/{{ post.image }}" alt="" />
+                <img src="{{ post.image | prepend: '/images/' | absolute_url }}" alt="" />
             </a>
             {% endif %}
             <h3>{{ post.title }}</h3>

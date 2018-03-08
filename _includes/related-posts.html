@@ -1,0 +1,32 @@
+{% if page.tags.size > 0 %}
+<header class="major">
+    <h2>{{ site.data.settings.related_posts }}</h2>
+</header>
+<section>
+    <div class="posts">
+    {% assign listed_posts_urls = page.url | split: ' ' %}
+    {% for tag in page.tags %}
+        {% for mypost in site.tags[tag] %}
+            {% unless listed_posts_urls contains mypost.url %}
+            <article>
+                {% if mypost.image %}
+                <a href="{{ mypost.url | absolute_url }}" class="image">
+                    <img src="{{ mypost.image | prepend: '/images/' | absolute_url }}" alt="" />
+                </a>
+                {% endif %}
+                <h3><a href="{{ mypost.url | absolute_url }}">{{ mypost.title }}</a></h3>
+                <h6>{{ mypost.date | date: '%b %d, %Y' }}</h6>
+                <p>{{ mypost.excerpt }}</p>
+                <ul class="tags">
+                    {% for tag in mypost.tags %}
+                    <a class="button tag" href="{{ tag | prepend: '/tag/' | absolute_url }}">{{ tag }}</a>
+                    {% endfor %}
+                </ul>
+            </article>
+            {% assign listed_posts_urls = listed_posts_urls | push: mypost.url %}
+            {% endunless %}
+        {% endfor %}
+    {% endfor %}
+    </div>
+</section>
+{% endif %}

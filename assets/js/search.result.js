@@ -59,7 +59,11 @@ jQuery(function() {
                 });
             } else {
                 // If there are no results, let the user know.
-                $searchres.html('<li>No results found.<br/>Please check spelling, spacing, etc.</li>');
+                $searchres.html('<article>' +
+                    '<div class="box">No results found. <br />'+
+                    'Please try a different search.</div>' +
+                    '</article>'
+                );
             };
             $searchres.show();
         });
