@@ -1,6 +1,6 @@
 <h2>{{ site.data.settings.tag_list_promt }}</h2>
 <ul class="tags">
     {% for tag in page.tags %}
-    <a class="button tag" href="{{ tag | prepend: '/tag/' | absolute_url }}">{{ tag }}</a>
+    <a class="button tag" href="{{ tag | prepend: '/tag/' | absolute_url }}/">{{ tag }}</a>
     {% endfor %}
 </ul>
