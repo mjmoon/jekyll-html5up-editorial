@@ -19,7 +19,7 @@
                 <p>{{ mypost.excerpt }}</p>
                 <ul class="tags">
                     {% for tag in mypost.tags %}
-                    <a class="button tag" href="{{ tag | prepend: '/tag/' | absolute_url }}">{{ tag }}</a>
+                    <a class="button tag" href="{{ tag | prepend: '/tag/' | absolute_url }}/">{{ tag }}</a>
                     {% endfor %}
                 </ul>
             </article>
