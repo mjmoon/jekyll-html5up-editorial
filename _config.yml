@@ -29,14 +29,42 @@ markdown: kramdown
 highlighter: rouge
 permalink: none
 plugins:
-    - jekyll-paginate
+    - jekyll-paginate-v2
     - jekyll-sitemap
     - jekyll-feed
     - jekyll-seo-tag
     - jekyll/tagging
 
-# Pagination
-paginate: 8
+# Pagination - posts
+pagination:
+    # Site-wide kill switch, disabled here it doesn't run at all
+    enabled: true
+    # Set to 'true' to enable pagination debugging. This can be enabled in the site config or only for individual pagination pages
+    debug: true
+    # The default document collection to paginate if nothing is specified ('posts' is default)
+    collection: 'posts'
+    # How many objects per paginated page, used to be `paginate` (default: 0, means all)
+    per_page: 6
+    # Sort to display recent post first
+    sort_field: 'date'
+    sort_reverse: true
+
+# Pagination - tags
+autopages:
+    # Site-wide kill switch, disable here and it doesn't run at all
+    enabled: true
+    # Tag pages, omit to disable
+    tags:
+        # Optional, the list of layouts that should be processed for every tag found in the site
+        layouts:
+            - 'tag_page.html'
+        title: 'Tag: :tag' # :tag is replaced by the tag name
+        permalink: '/tag/:tag'
+    # disable others
+    categories:
+        enabled: false
+    collections:
+        enabled: false
 
 # tagging
 tag_page_layout: tag_page
