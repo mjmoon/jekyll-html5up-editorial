@@ -1,0 +1,84 @@
+[
+    
+    {
+        "title": "Amet varius aliquam",
+        "content": "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
+        "date": "Mar 01, 2018",
+        "url": " https://mjmoon.github.io/jekyll-html5up-editorial/post/amet-varius-aliquam.html",
+        "author": "Michael J. Moon",
+        "tags": "lcus, enim, lorem, nulla, amet, feugiat, aliquam"
+    },
+    
+    {
+        "title": "Feugiat lorem aenean",
+        "content": "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
+        "date": "Feb 06, 2018",
+        "url": " https://mjmoon.github.io/jekyll-html5up-editorial/post/feugiat-lorem-aenean.html",
+        "author": "Michael J. Moon",
+        "tags": "lcus, enim, lorem, nulla, amet, feugiat, aliquam"
+    },
+    
+    {
+        "title": "Sed etiam facilis",
+        "content": "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
+        "date": "Feb 05, 2018",
+        "url": " https://mjmoon.github.io/jekyll-html5up-editorial/post/sed-etiam-facilis.html",
+        "author": "Michael J. Moon",
+        "tags": "lcus, enim, lorem, nulla, amet, feugiat, aliquam"
+    },
+    
+    {
+        "title": "Nulla amet dolore",
+        "content": "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
+        "date": "Feb 04, 2018",
+        "url": " https://mjmoon.github.io/jekyll-html5up-editorial/post/tempus-ullamcorper.html",
+        "author": "Michael J. Moon",
+        "tags": "lcus, enim, lorem, nulla, amet, feugiat, aliquam"
+    },
+    
+    {
+        "title": "Nulla amet dolore",
+        "content": "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
+        "date": "Feb 03, 2018",
+        "url": " https://mjmoon.github.io/jekyll-html5up-editorial/post/nulla-amet-dolore.html",
+        "author": "Michael J. Moon",
+        "tags": "lcus, enim, lorem, nulla, amet, feugiat, aliquam"
+    },
+    
+    {
+        "title": "Interdum aenean",
+        "content": "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
+        "date": "Jan 02, 2018",
+        "url": " https://mjmoon.github.io/jekyll-html5up-editorial/post/interdum-aenean.html",
+        "author": "Michael J. Moon",
+        "tags": "lcus, enim, lorem, nulla, amet, feugiat, aliquam"
+    },
+    
+    {
+        "title": "Interdum aenean",
+        "content": "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
+        "date": "Jan 01, 2018",
+        "url": " https://mjmoon.github.io/jekyll-html5up-editorial/post/interdum-aenean.html",
+        "author": "Michael J. Moon",
+        "tags": "lcus, enim, lorem, nulla, amet, feugiat, aliquam"
+    },
+    
+    {
+        "title": "Creating linked plots using Python's bokeh library",
+        "content": "In this post, I am going to create interlinked, interactive scatter plots using the Bokeh library. Below is the description of the library from the homepage.  Bokeh is a Python interactive visualization library that targets modern web browsers for presentation. Its goal is to provide elegant, concise construction of novel graphics in the style of D3.js, and to extend this capability with high-performance interactivity over very large or streaming datasets. Bokeh can help anyone who would like to quickly and easily create interactive plots, dashboards, and data applications.I quite like its clean look and more than anything the interactive visualization capabilities. It also allows using javascript based web browser interactions without learning javascript. I have been picking on what it can do from its documentations and tutorials available on Bokeh NBViewer Gallery.Load librariesFirst, I am going to load the libraries I am going to use and run output_notebook function from the bokeh library. The function configures Bokeh plot objects to be displayed on the notebook.import pandas as pdfrom bokeh.io import output_notebook, output_file, showfrom bokeh.plotting import figurefrom bokeh.models import ColumnDataSourcefrom bokeh.models import CategoricalColorMapperfrom bokeh.models import Plot, Range1d, HoverToolfrom bokeh.layouts import gridplotfrom bokeh.palettes import Set2output_notebook()Load dataTo enable interlinking between plots, a common ColumnDataSource needs to be used as the data source between plots. You can create one from a pandas DataFrame or a dictionary. I am going to use the diabetes dataset originally from here to demonstrate this. Below is a brief description of the dataset from the original source.  Ten baseline variables, age, sex, body mass index, average blood pressure, and six blood serum measurements were obtained for each of n = 442 diabetes patients, as well as the response of interest, a quantitative measure of disease progression one year after baseline.I am going to plot each of the 9 numeric features against the response variable on individual scatter plots. I willIn the code block below, the dataset is loaded as a pandas DataFrame and a ColumnDataSource is defined using the DataFrame.df = pd.read_table(&#39;../data/diabetes_tab.txt&#39;)# assuming 1 is female and 2 is maledf[&#39;Gender&#39;] = [&#39;FEMALE&#39; if x == 1 else &#39;MALE&#39;                for x in df.SEX.values]df.rename(columns={&#39;AGE&#39;: &#39;Age&#39;}, inplace=True)one_source = ColumnDataSource(df)df.head()                  Age      SEX      BMI      BP      S1      S2      S3      S4      S5      S6      Y      Gender                  0      59      2      32.1      101.0      157      93.2      38.0      4.0      4.8598      87      151      MALE              1      48      1      21.6      87.0      183      103.2      70.0      3.0      3.8918      69      75      FEMALE              2      72      2      30.5      93.0      156      93.6      41.0      4.0      4.6728      85      141      MALE              3      24      1      25.3      84.0      198      131.4      40.0      5.0      4.8903      89      206      FEMALE              4      50      1      23.0      101.0      192      125.4      52.0      4.0      4.2905      80      135      FEMALE      Create an interactive scatter plotNext, I am going to create a single scatter plot with age and the response variable. I am going to add a few interaction effects including a hover effect showing the x, y values of each point.  Box select: Highlight data points selected in a rectangular box by dragging the mouse  Lasso select: Highlight data points selected in a lasso shape by dragging the mouse  Tap: Highlight selected data points by clicking the mouse  Wheel zoom: Zoom in and out of the plot using the mouse wheel zoom  Reset: Reset the plot to its default state# define a color map for SEX variablecmap = CategoricalColorMapper(    factors=(&#39;FEMALE&#39;, &#39;MALE&#39;),    palette=Set2[3])# define a function to enable reusedef plot_diabetes(x, width=480, height=320,                  legend=None, legend_location=None,                  legend_orientation=&#39;vertical&#39;):    hover = HoverTool(        tooltips=[(&#39;Index&#39;, &#39;$index&#39;),                  (x, &#39;$x&#39;),                  (&#39;Progression&#39;, &#39;$y&#39;),                  (&#39;Gender&#39;, &#39;@Gender&#39;)                 ])    tools = [hover, &#39;box_select&#39;, &#39;tap&#39;,             &#39;wheel_zoom&#39;, &#39;reset&#39;, &#39;help&#39;]    plt = figure(width=width, height=height,                 title=x +&#39; vs. diabetes progression&#39;,                 tools=tools)    plt.circle(x, &#39;Y&#39;, alpha=0.8, source=one_source,               fill_color={&#39;field&#39;: &#39;Gender&#39;, &#39;transform&#39;: cmap},               line_color={&#39;field&#39;: &#39;Gender&#39;, &#39;transform&#39;: cmap},               # highlight when selected               selection_alpha=1,               selection_fill_color={&#39;field&#39;: &#39;Gender&#39;, &#39;transform&#39;: cmap},               selection_line_color={&#39;field&#39;: &#39;Gender&#39;, &#39;transform&#39;: cmap},               # mute when not selected               nonselection_alpha=0.2,               nonselection_fill_color={&#39;field&#39;: &#39;Gender&#39;, &#39;transform&#39;: cmap},               nonselection_line_color=None,               legend=legend)    plt.xaxis.axis_label = x    plt.xaxis.axis_label_text_font_style = &#39;normal&#39;    plt.yaxis.axis_label = &#39;Diabetes progression&#39;    plt.yaxis.axis_label_text_font_style = &#39;normal&#39;    if(legend):        plt.legend.location = legend_location        plt.legend.orientation = legend_orientation        plt.legend.background_fill_alpha = 0.7    return(plt)p1 = plot_diabetes(&#39;Age&#39;, legend=&#39;Gender&#39;, legend_location=&#39;top_left&#39;,                   legend_orientation=&#39;horizontal&#39;)output_file(&#39;../html/01-bokeh-plot-example-plot-01.html&#39;)show(p1)    You can now see an interactive scatter plot. A toolbar is placed beside the plot where you can switch on and off different tools we included. In particular, in this plot you can see the values for each data point when you hover over them. You can set the list of values you want to show by configuring tooltips with a list of (label, value) pairs in the HoverTool object.You can refer to different variables in the source dataset by prefixing @. Fields starting with $ will are used for “special fields” such as the coordinates and the color apparently the color values are pulled from the data source, not the figure’s fill_color as used above.Create multiple linked plotsNow, I am going to create multiple plots and place them in a single grid using bokeh library’s gridplot. The plots are linked by a single data source. Selecting data points in one plot will highlight the same data points in all.plots = [plot_diabetes(x, 240, 180)         for x in df.columns         if x not in [&#39;SEX&#39;, &#39;Gender&#39;, &#39;Y&#39;]]# create an empty plot with only the titlegtitle = figure(width=240, height=80, title=&#39;Linked scatter plots&#39;)gtitle.circle(0, 0, fill_color=None, line_color=None)gtitle.title.text_font_size = &#39;18px&#39;gtitle.border_fill_color = Nonegtitle.grid.visible = Falsegtitle.axis.visible = Falsegtitle.outline_line_color = None# create an empty plot with only the legendglegend = figure(width=240, height=80, title=None)glegend.circle(0,0, fill_color=Set2[3][0], line_color=Set2[3][0], legend=&#39;FEMALE&#39;)glegend.circle(0,0, fill_color=Set2[3][1], line_color=Set2[3][1], legend=&#39;MALE&#39;)glegend.border_fill_color = Noneglegend.grid.visible = Falseglegend.axis.visible = Falseglegend.outline_line_color = Noneglegend.legend.border_line_color = Noneglegend.legend.location = &#39;center&#39;output_file(&#39;../html/01-bokeh-plot-example-plot-02.html&#39;)show(gridplot([gtitle, None, glegend] + plots, ncols=3))    You can now see nine different plots linked with a single data source. When you select any data points in one plot the same data points are highlighted across all while the rest are ‘muted’.This could be useful when inspecting data with multiple dimensions. For example, when I clicked on the person with the highest S1 measurement, I can she that he also had the highest measurements of S2 and S4. Besides, it is just fun playing with these plots. I am looking forward to going through more of the library examples and tutorials.",
+        "date": "Oct 06, 2017",
+        "url": " https://mjmoon.github.io/jekyll-html5up-editorial/post/linked-bokeh-plot.html",
+        "author": "Michael J. Moon",
+        "tags": "bokeh, python, data-visualization, pandas"
+    },
+    
+    {
+        "title": "Interdum aenean",
+        "content": "Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.",
+        "date": "Jan 01, 2016",
+        "url": " https://mjmoon.github.io/jekyll-html5up-editorial/post/interdum-aenean.html",
+        "author": "Michael J. Moon",
+        "tags": "lcus, enim, lorem, nulla, amet, feugiat, aliquam"
+    }
+    
+]
