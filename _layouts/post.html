@@ -1,5 +1,6 @@
 ---
 layout: default
+
 ---
 <section>
     <header class="main">
@@ -9,4 +10,10 @@ layout: default
     <span class="image main"><img src="{{ site.url }}{{ site.baseurl }}/images/{{ page.image }}" alt="" /></span>
     {% endif %}
     {{ content }}
+</section>
+<section>
+    {% include social-sharing.html %}
+    {% if site.data.settings.disqus.comments %}
+    {% include disqus.html %}
+    {% endif %}
 </section>

@@ -1,0 +1,7 @@
+<h2>{{ site.data.settings.sharing_button_prompt }}</h2>
+<ul class="icons square">
+    <li><a class="icon fa-facebook-square" label="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}&amp;title={{ page.title | escape }}" target="_blank"></a></li>
+    <li><a class="icon fa-twitter-square" label="twitter" href="https://twitter.com/intent/tweet?text={{ page.title }}&amp;url={{ page.url | absolute_url }}" target="_blank"></a></li>
+    <li><a class="icon fa-google-plus-square" label="google-plus" href="https://plus.google.com/share?url={{ page.url | absolute_url }}" target="_blank"></a></li>
+    <li><a class="icon fa-linkedin-square" label="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}&title={{ page.title | escape }}&source={{ site.title}}"></a></li>
+</ul>

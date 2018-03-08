@@ -19,4 +19,7 @@
     {% seo %}
     <!-- Use Atom -->
     {% feed_meta %}
+    {% if site.data.settings.disqus.comments %}
+    <script id="dsq-count-scr" src="//micbon-blog.disqus.com/count.js" async></script>
+    {% endif %}
 </head>
