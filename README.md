@@ -1,3 +1,22 @@
+This is a jekyll theme based on[ Editorial theme by HTML5 UP](https://html5up.net/editorial). The following features have been added for blogging with jekyll.
+
++   __Recent post pagination__ using `jekyll-paginate-v2`
++   __Tag__ pages using `jekyll-tagging`
++   __Infinite scrolling__ using `jscroll.js`
++   __Search__ using `lunr.js`
++   __Comments__ using `disqus`
+
+## Credits
+
++   [Editorial by HTHML5 UP](https://html5up.net/editorial)
++   [jekyll-paginate-v2](https://github.com/sverrirs/jekyll-paginate-v2)
++   [jekyll-tagging](https://github.com/pattex/jekyll-tagging)
++   [jscroll.js](http://jscroll.com/)
++   [lunr.js](https://lunrjs.com/)
++   [Disqus](https://disqus.com/)
+
+## Original License from HTML5 UP
+```
 Editorial by HTML5 UP
 html5up.net | @ajlkn
 Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
@@ -31,3 +50,4 @@ Credits:
 		Misc. Sass functions (@HugoGiraudel)
 		Respond.js (j.mp/respondjs)
 		Skel (skel.io)
+```
