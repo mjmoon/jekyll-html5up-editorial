@@ -3,7 +3,7 @@ layout: post
 title: "Creating linked plots using Python's bokeh library"
 author: "Michael J. Moon"
 categories: post
-tags: [bokeh, python, data visualization, pandas]
+tags: [bokeh, python, data-visualization, pandas]
 date: 2018-01-01
 ---
 In this post, I am going to create interlinked, interactive scatter plots using the [**Bokeh**](https://bokeh.pydata.org/en/latest/ 'Bokeh homepage'){:target="_blank"} library. Below is the description of the library from the homepage.

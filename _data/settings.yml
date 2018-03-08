@@ -9,6 +9,7 @@ social:
 
 # texts
 sharing_button_prompt: Share
+tag_list_promt: Tags
 
 # Change to true for Disqus comments
 disqus:

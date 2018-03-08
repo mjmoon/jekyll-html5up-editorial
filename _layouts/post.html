@@ -12,7 +12,20 @@ layout: default
     {{ content }}
 </section>
 <section>
-    {% include social-sharing.html %}
+    <div class="row">
+        <div class="5u 12u$(medium)">
+            {% include tags.html %}
+        </div>
+        <div class="4u 6u(medium)">
+            {% include social-sharing.html %}
+        </div>
+        <div class="3u$ 6u$(medium)">
+            <ul class="alt">
+                <li>Written on: {{ page.date | date: '%b %d, %Y' }}</li>
+                <li>Written by: {{ page.author }}</li>
+            </ul>
+        </div>
+    </div>
     {% if site.data.settings.disqus.comments %}
     {% include disqus.html %}
     {% endif %}

@@ -33,6 +33,7 @@ layout: jscroll
             </a>
             {% endif %}
             <h3>{{ post.title }}</h3>
+            <h6>{{ post.date | date: '%b %d, %Y' }}</h6>
             <p>{{ post.excerpt }}</p>
             <ul class="actions">
                 <li><a href="{{ post.url | absolute_url }}" class="button">More</a></li>
