@@ -1,6 +1,7 @@
 This is a jekyll theme based on[ Editorial theme by HTML5 UP](https://html5up.net/editorial). The following features have been added for blogging with jekyll.
 
 __Demo site__: https://mjmoon.github.io/jekyll-html5up-editorial/
+__My own blog using the template (with a few modifications/in draft)__:https://mjmoon.github.io/blog/
 
 +   __Recent post pagination__ using `jekyll-paginate-v2`
 +   __Tag__ pages using `jekyll-tagging`
