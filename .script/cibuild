@@ -18,7 +18,7 @@ git clone https://${GITHUB_TOKEN}@github.com/mjmoon/jekyll-html5up-editorial.git
 
 # build with Jekyll into "_site"
 bundle exec jekyll build
-bundle exec htmlproofer ./_site --disable-external
+bundle exec htmlproofer ./_site --disable-external --allow_hash_href true --alt_ignore '/.*/'
 
 # push
 cd _site
