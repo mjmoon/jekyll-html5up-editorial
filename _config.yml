@@ -80,4 +80,3 @@ exclude:
     - LICENSE
     - README.md
     - Rakefile
-sudo: false

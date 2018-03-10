@@ -1,13 +1,14 @@
 language: ruby
+# only run CI-builds on master branch
+branches:
+  only:
+  - master
 rvm:
-- 2.3.1
-install:
-- bundle install
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: _site
-  target_branch: gh-pages
-  on:
-    branch: master
+- 2.5.0
+# set execution permission on our build script
+before_script:
+- chmod +x ./.script/cibuild
+# path to our build script.
+# Travis will run `bundle install` by default before running our script
+script: ./.script/cibuild
+sudo: false

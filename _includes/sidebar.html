@@ -52,7 +52,11 @@
         <footer id="footer">
             <ul class="icons">
                 {% for social in site.data.settings.social %}
+                {% if social.label == "Feed" %}
+                <li><a href="{{ social.link | absolute_url }}" target="_blank" class="icon fa-{{ social.icon }}"><span class="label">{{ social.label }}</span></a></li>
+                {% else %}
                 <li><a href="{{ social.link }}" target="_blank" class="icon fa-{{ social.icon }}"><span class="label">{{ social.label }}</span></a></li>
+                {% endif %}
                 {% endfor %}
             </ul>
             <p class="copyright">&copy; {{ site.author }}. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
